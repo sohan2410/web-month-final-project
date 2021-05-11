@@ -1,4 +1,9 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
   body {
     min-height: 100vh;
     width: 100%;
@@ -38,12 +43,13 @@
     border: 1px solid white;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+    color: black;
 }
 .signIn, .signUp{
     font-family: "Poppins";
     font-weight: 700;
     font-style: bold;
-    background: none;
+    background: transparent;
     border: none;
 }
 .button{
