@@ -11,5 +11,5 @@ window.addEventListener("load", () => {
 });
 
 signInSignUpButton.addEventListener("click", () => {
-  location.href="/pages/ranjith/index.html"
+  location.href="/pages/authPage/index.html"
 })

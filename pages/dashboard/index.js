@@ -13,7 +13,7 @@ createNoteButton.addEventListener("click", () => {
 
 logout.addEventListener("click", () => {
   localStorage.removeItem("jwt");
-  location.href = "../ranjith/index.html";
+  location.href = "../authPage/index.html";
 });
 
 const createNotes = (array) => {
