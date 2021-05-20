@@ -1,6 +1,8 @@
 const body = document.querySelector("body");
 
-const apiUrl = "http://localhost:8000";
+// const apiUrl = "http://localhost:8000";
+const apiUrl="https://secure-waters-82488.herokuapp.com";
+
 
 const signInForm = document.querySelector(".signInButton");
 const signUpForm = document.querySelector(".signUpButton");

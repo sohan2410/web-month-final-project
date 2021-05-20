@@ -3,7 +3,9 @@ const token = localStorage.getItem("jwt");
 const logout = document.querySelector(".logout");
 let cardData = [];
 const createNoteButton = document.querySelector(".new-note");
-const apiUrl = "http://localhost:8000";
+// const apiUrl = "http://localhost:8000";
+const apiUrl="https://secure-waters-82488.herokuapp.com";
+
 
 createNoteButton.addEventListener("click", () => {
   location.href = "/pages/createNotes/createNotes.html";
