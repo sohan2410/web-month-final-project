@@ -40,7 +40,6 @@ updateNoteButton.addEventListener("click", () => {
 });
 
 deleteNoteButton.addEventListener("click", () => {
-
   if (token) {
     fetch(`${apiUrl}/note/delete/${noteId}`, {
       method: "DELETE",
@@ -49,13 +48,12 @@ deleteNoteButton.addEventListener("click", () => {
         authorization: token,
       },
     })
-      .then((res) => {
-        res.json();
-        console.log(res);
-      })
+      .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data.message) {
           console.log(data);
+          console.log(data.message);
           location.href = "/pages/dashboard/dashboard.html";
         }
       })
@@ -65,4 +63,3 @@ deleteNoteButton.addEventListener("click", () => {
       });
   }
 });
-
