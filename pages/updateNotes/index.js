@@ -54,14 +54,14 @@ deleteNoteButton.addEventListener("click", () => {
         console.log(res);
       })
       .then((data) => {
-        if (data) {
+        if (data.message) {
           console.log(data);
           location.href = "/pages/dashboard/dashboard.html";
         }
       })
       .catch((err) => {
-        alert("Error Deleting Note!! Re-try....");
         console.log(err);
+        alert("Error Deleting Note!! Re-try....");
       });
   }
 });
