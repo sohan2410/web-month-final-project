@@ -52,8 +52,6 @@ deleteNoteButton.addEventListener("click", () => {
       .then((data) => {
         console.log(data);
         if (data.message) {
-          console.log(data);
-          console.log(data.message);
           location.href = "/pages/dashboard/dashboard.html";
         }
       })
