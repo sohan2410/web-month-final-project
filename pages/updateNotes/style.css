@@ -23,8 +23,8 @@ body {
 }
 
 .create-notes-container {
-  width: 300px;
-  height: 350px;
+  width: 400px;
+  height: 550px;
   padding: 20px;
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.4);
@@ -67,11 +67,13 @@ body {
   outline: none;
 }
 
-.create-note-button {
+.create-note-button,
+.delete-note-button {
   background: transparent;
   padding: 10px;
   border-radius: 15px;
   border: 1px solid white;
   cursor: pointer;
   margin-left: 15px;
+  /* margin: 15px; */
 }

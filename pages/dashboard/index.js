@@ -1,23 +1,25 @@
 const cardContainer = document.querySelector(".card-container");
+const token = localStorage.getItem("jwt");
+const logout = document.querySelector(".logout");
+let cardData = [];
+const createNoteButton = document.querySelector(".new-note");
+const apiUrl = "http://localhost:8000";
 
-const cardData = [
-  {
-    heading: "heading1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure sequi culpa officiis quae, quod aperiam temporibus pariatur, est laboriosam corporis similique laudantium repellat quas expedita possimus tempora provident doloremque illum exercitationem, architecto deserunt. Fuga repellat incidunt assumenda dolore cumque nihil facilis repudiandae? Explicabo aspernatur earum nostrum amet aperiam, ab distinctio!",
-    id: 1,
-  },
-  { heading: "heading2", content: "dhjalk;gjasjfasfs", id: 2 },
-  { heading: "heading3", content: "dhjalk;gjasjfasfs", id: 3 },
-  { heading: "heading4", content: "dhjalk;gjasjfasfs", id: 4 },
-  { heading: "heading5", content: "dhjalk;gjasjfasfs", id: 5 },
-  { heading: "heading6", content: "dhjalk;gjasjfasfs", id: 6 },
-  { heading: "heading7", content: "dhjalk;gjasjfasfs", id: 7 },
-];
+createNoteButton.addEventListener("click", () => {
+  location.href = "/pages/createNotes/createNotes.html";
+});
+
+logout.addEventListener("click", () => {
+  localStorage.removeItem("jwt");
+  location.href = "../ranjith/index.html";
+});
 
 const createNotes = (array) => {
+  cardContainer.innerHTML = "";
+
   array.forEach((cardObj) => {
-    const { heading, content, id } = cardObj;
+    const { heading, content } = cardObj;
+    const id = cardObj.noteId;
 
     const card = document.createElement("div");
     card.classList.add("card");
@@ -31,10 +33,26 @@ const createNotes = (array) => {
   });
 };
 
-createNotes(cardData);
-
 const body = document.querySelector("body");
 
 window.addEventListener("load", () => {
   body.classList.add("visible");
+
+  if (token) {
+    fetch(`${apiUrl}/note/getallnotes`, {
+      method: "GET",
+      headers: {
+        authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        cardData = data.data;
+        createNotes(data.data);
+      })
+      .catch((err) => {
+        alert("Error in fetching data");
+        console.log(err);
+      });
+  }
 });

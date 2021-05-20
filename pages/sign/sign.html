@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,29 +11,54 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <title>Sign In or Sign Up</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <main>
-        <div class="left-section">
-            <h1 class="signIn">Sign In</h1>
-                <input type="text" placeholder="email"> <br>
-                <input type="password" name="" id="" placeholder="password"> <br>
-                <a href="../dashboard/dashboard.html" class="links"><input type="button" value="Sign In" class="button"></a>
-                
-        </div>
+      <div class="left-section">
+        <h1 class="signIn">Sign In</h1>
+        <!-- <form class="signin-form"> -->
+        <input type="text" class="signin-email" placeholder="email" /> <br />
+        <input
+          type="password"
+          class="signin-password"
+          id=""
+          placeholder="password"
+        />
+        <br />
+        <input
+          type="button"
+          value="Sign In"
+          class="button links signInButton"
+        />
+        <!-- <a href="../dashboard/dashboard.html" class="links"><input type="button" value="Sign In" class="button"></a> -->
+        <!-- </form> -->
+      </div>
 
-        <div class="right-section">
-            <h1 class="signUp">Sign Up</h1>
-                <input type="text" placeholder="Email"> <br>
-                <input type="text" placeholder="Name"> <br>
-                <input type="text" placeholder="Enter password"> <br>
-                <input type="text" placeholder="Re-enter password"> <br>
-                <a href="../dashboard/dashboard.html"><input type="button" value="Sign Up" class="button"></a>
-        </div>
+      <div class="right-section">
+        <h1 class="signUp">Sign Up</h1>
+        <input type="text" class="signup-email" placeholder="Email" /> <br />
+        <input type="text" class="signup-name" placeholder="Name" /> <br />
+        <input
+          type="password"
+          class="signup-password"
+          placeholder="Enter password"
+        />
+        <br />
+        <input
+          type="password"
+          class="signup-retypepassword"
+          placeholder="Re-enter password"
+        />
+        <br />
+        <input type="button" value="Sign Up" class="button signUpButton" />
+        <!-- <a href="../dashboard/dashboard.html"
+          ><input type="button" value="Sign Up" class="button signUpButton"
+        /></a> -->
+      </div>
     </main>
 
     <div class="circle1"></div>
     <div class="circle2"></div>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>

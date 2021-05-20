@@ -109,3 +109,14 @@ main > div {
   filter: blur(5px);
   transform: rotate(18deg);
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid white;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
