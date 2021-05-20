@@ -44,16 +44,20 @@ deleteNoteButton.addEventListener("click", () => {
   if (token) {
     fetch(`${apiUrl}/note/delete/${noteId}`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: token,
+      },
     })
       .then((res) => {
         res.json();
         console.log(res);
       })
       .then((data) => {
-        // if (data.message) {
-        //   location.href = "/pages/dashboard/dashboard.html";
-        // }
-        console.log(data);
+        if (data) {
+          console.log(data);
+          location.href = "/pages/dashboard/dashboard.html";
+        }
       })
       .catch((err) => {
         alert("Error Deleting Note!! Re-try....");
