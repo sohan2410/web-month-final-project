@@ -1,10 +1,6 @@
-// let params = new URLSearchParams(document.location.search);
-// let noteId = params.get("noteId");
 
 const urlParams = new URLSearchParams(window.location.search);
 const noteId = urlParams.get("noteId");
-
-console.log(noteId);
 
 const updateNoteButton = document.querySelector(".create-note-button");
 const deleteNoteButton = document.querySelector(".delete-note-button");
@@ -50,7 +46,6 @@ deleteNoteButton.addEventListener("click", () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.message) {
           location.href = "/pages/dashboard/dashboard.html";
         }
